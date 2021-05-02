@@ -23,6 +23,15 @@ public class Test {
 		session.getTransaction().commit();
 		session.close();
 		
+		
+		session=s.openSession();
+		session.beginTransaction();
+		User u=(User)session.get(User.class,1);
+		System.out.println(u.getName());
+	
+		session.close();
+		
+		
 	}
 
 }

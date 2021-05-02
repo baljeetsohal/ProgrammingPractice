@@ -55,6 +55,9 @@ public class User {
 	public void setId(int id) {
 		this.id = id;
 	}
+	public User(){
+		
+	}
 	public User(int id, String name, Date joinedDate, String address, String description) {
 		super();
 		this.id = id;
