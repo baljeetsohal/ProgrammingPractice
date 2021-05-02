@@ -6,20 +6,24 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import com.baljeet.coding.HibernatePrac.model.Address;
 import com.baljeet.coding.HibernatePrac.model.User;
 
 public class Test {
 
 	public static void main(String[] args) {
-		User user=new User(1,"baljeet",new Date(),"Kirti nagar","Developer");
-		User user1=new User(2,"Gurjas",new Date(),"Kirti nagar","Developer");
-		User user2=new User(3,"jaspreet",new Date(),"Kirti nagar","Developer");
+		Address add=new Address();
+		add.setState("Delhi");
+		User user=new User();
+		user.setName("Baljeet");
+		user.setAddress(add);
+		User user1=new User();
+		user1.setName("Jaspreet");;
 		SessionFactory s=new Configuration().configure().buildSessionFactory();
 		Session session=s.openSession();
 		session.beginTransaction();
 		session.save(user);
 		session.save(user1);
-		session.save(user2);
 		session.getTransaction().commit();
 		session.close();
 		
