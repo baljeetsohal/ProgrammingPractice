@@ -10,11 +10,13 @@ import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
 @Entity(name="USER_DETAILS")
+@Table(name="USERDETAILS")
 public class User { 
 	@Id @GeneratedValue
 	@Column(name="userid")
