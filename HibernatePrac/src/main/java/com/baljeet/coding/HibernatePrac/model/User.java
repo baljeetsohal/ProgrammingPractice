@@ -10,6 +10,7 @@ import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -27,12 +28,13 @@ import org.hibernate.mapping.Array;
 @Entity(name="USER_DETAILS")
 @Table(name="USERDETAILS")
 public class User { 
+	
 	@Id @GeneratedValue
 	@Column(name="userid")
 	private int id;
-	@Column(name="username")
+	@Column(name="username") 
 	private String name;
-	@ElementCollection
+	@ElementCollection(fetch=FetchType.EAGER)
 	@JoinTable(name="User_Address",joinColumns=@JoinColumn(name="User_id"))
 	@GenericGenerator(name="increment-gen",strategy="increment")
 	@CollectionId(columns = { @Column(name="Address_id") }, generator = "increment-gen", type = @Type( type = "long"))

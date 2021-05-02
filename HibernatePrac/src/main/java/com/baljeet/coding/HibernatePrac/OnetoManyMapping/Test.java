@@ -16,7 +16,7 @@ public class Test {
 		Vehicle v1=new Vehicle();
 		v1.setVehiclename("mercedez");
 		Vehicle v2=new Vehicle();
-		v2.setVehiclename("BMW");
+		v2.setVehiclename("BMW");   
 		User user=new User();
 		user.setName("Baljeet");
 		user.getVehiclelist().add(v1);

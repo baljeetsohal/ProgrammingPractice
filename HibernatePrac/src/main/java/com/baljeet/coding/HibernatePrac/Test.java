@@ -32,9 +32,7 @@ public class Test {
 		session=s.openSession();
 		session.beginTransaction();
 		User u=(User)session.get(User.class,1);
-		System.out.println(u.getName());
-	
-		session.close();
+	    System.out.println(u.getListofAddress().size());
 		
 		
 	}
