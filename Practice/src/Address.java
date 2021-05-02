@@ -1,9 +1,11 @@
+import java.io.Serializable;
 
-
-public class Address {
+public class Address implements Serializable {
+	private static String state="kirti nagar";
 	private String Block;
 	private int plotno;
 	private String Area;
+	private transient int m=98;
 	public void setBlock(String block) {
 		Block = block;
 	}
@@ -27,5 +29,17 @@ public class Address {
 		Block = block;
 		this.plotno = plotno;
 		Area = area;
+	}
+	public static String getState() {
+		return state;
+	}
+	public int getM() {
+		return m;
+	}
+	public static void setState(String state) {
+		Address.state = state;
+	}
+	public void setM(int m) {
+		this.m = m;
 	}
 }
