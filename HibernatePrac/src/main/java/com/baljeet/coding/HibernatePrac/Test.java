@@ -14,16 +14,17 @@ public class Test {
 	public static void main(String[] args) {
 		Address add=new Address();
 		add.setState("Delhi");
+		Address add1=new Address();
+		add.setState("Lucknow");
 		User user=new User();
 		user.setName("Baljeet");
-		user.setAddress(add);
-		User user1=new User();
-		user1.setName("Jaspreet");;
+		user.getListofAddress().add(add);
+		user.getListofAddress().add(add1);
 		SessionFactory s=new Configuration().configure().buildSessionFactory();
 		Session session=s.openSession();
 		session.beginTransaction();
 		session.save(user);
-		session.save(user1);
+		
 		session.getTransaction().commit();
 		session.close();
 		

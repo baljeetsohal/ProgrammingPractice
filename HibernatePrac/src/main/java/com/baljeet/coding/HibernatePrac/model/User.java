@@ -1,8 +1,11 @@
 package com.baljeet.coding.HibernatePrac.model;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,8 +21,8 @@ public class User {
 	private int id;
 	@Column(name="username")
 	private String name;
-	@Embedded
-	private Address address;
+	@ElementCollection
+	private Set<Address> listofAddress=new HashSet<Address>();
 	
 	public String getName() {
 		return name;
@@ -42,13 +45,14 @@ public class User {
 	}
 
 
-	public Address getAddress() {
-		return address;
+
+	public Set<Address> getListofAddress() {
+		return listofAddress;
 	}
 
 
-	public void setAddress(Address address) {
-		this.address = address;
+	public void setListofAddress(Set<Address> listofAddress) {
+		this.listofAddress = listofAddress;
 	}
 	
 
